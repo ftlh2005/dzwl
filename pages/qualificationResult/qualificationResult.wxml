@@ -1,0 +1,38 @@
+<scroll-view class="container" wx:if="{{wait=='true'}}">
+  <view class='feed-info'>
+    <image src='../../static/img/result143.png' mode='widthFix'></image>  
+    <text>信息已提交成功，请耐心等待管理员审核结果。</text>
+    <view class='notice'>
+      <view class='notice0'>注意：</view>
+      <view class='notice1'>1.一般审核周期为1-3个工作日；</view>
+      <view class='notice1'>2.如果有其他特殊情况我们会通过电话联系您，请保持通讯畅通。</view>
+    </view>
+  </view>
+  <button class='editInfo' bindtap='backMine'>返回个人中心</button>
+</scroll-view>
+
+<scroll-view class="container" wx:if="{{fail=='true'}}">
+  <view class='feed-info'>
+    <image src='../../static/img/result140.png' mode='widthFix'></image>  
+    <text>您提交的信息审核未通过，请您重新提交信息，或者联系管理员。</text>
+    <view class='notice'>
+      <view class='notice0'>注意：</view>
+      <view class='notice1'>1.您的信息填写错误；</view>
+      <view class='notice1'>2.您的电话无法沟通；</view>
+      <view class='notice1'>3.您的公司信息不存在等</view>
+    </view>
+  </view>
+  <button class='editInfo' bindtap='editInfo'>修改信息</button>
+</scroll-view>
+
+<scroll-view class="container" wx:if="{{success=='true'}}">
+  <view class='feed-info'>
+    <image src='../../static/img/result141.png' mode='widthFix'></image>  
+    <text>您提交的信息已通过审核</text>
+    <view class='notice'>
+      <view class='notice0'>注意：</view>
+      <view class='notice1'>1.现在您可以使用您的身份去查看您当前身份信息下的最低优惠报价表。</view>
+    </view>
+  </view>
+</scroll-view>
+

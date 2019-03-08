@@ -1,0 +1,5 @@
+<view class="container">
+  <text>如果您遇到问题，请拨打我们的客服电话：</text>
+  <text>4006-857-847</text>
+</view>
+<button bindtap='callPhone' class='submit'>拨打电话</button>

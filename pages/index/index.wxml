@@ -1,0 +1,58 @@
+<scroll-view class='container'>
+  <swiper class='swiper' 
+  indicator-dots="true"
+  autoplay="true"
+  interval="4000"
+  duration="600"
+  circular="true">
+    <swiper-item  wx:for="{{banners}}" wx:key="{{index}}">
+      <image src="{{item.img_url}}"  class="banner-img" mode='' bindtap='openBannerURL' data-id="{{item.id}}"></image>
+      <!-- <image src="../../static/img/banner0.png"  class="banner-img" mode=''></image> -->
+    </swiper-item>
+  </swiper>
+ 
+  <view class='btn2'>
+    <view class='card' bindtap='maichong'>
+      <image src='../../static/img/maichong.png' style='width:84rpx;height:53rpx;'></image>
+      <text>{{types[0].name}}式</text>
+    </view> 
+  </view>
+  <view class='btn2' style='border-left:1rpx solid #F6F6F6;width:49.7%;'>
+    <view class='card' bindtap='zhangli' style="{{user.level=='0' || user.level=='1'?'background:#CCC;pointer-events:none;':''}};">
+    <!--  -->
+      <image src='../../static/img/zhangli.png' style='width:92rpx;height:53rpx;'></image>
+      <text>{{types[1].name}}式</text>
+    </view> 
+  </view>
+
+  <view class='product'> 
+    <view class='title'>
+      <view class='icon'></view>
+      <text>资料库</text>
+    </view>
+    <view class='item-box'>
+      <view class='item' wx:for="{{hotProducts}}" wx:key="{{index}}">
+        <view class='item-img' bindtap='openProductURL' data-id="{{item.id}}">
+          <image src='{{item.img}}' mode='widthFix'></image>
+        </view>
+        <text>{{item.product_name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='product'> 
+    <view class='title'>
+      <view class='icon'></view>
+      <text>产品库</text>
+    </view>
+    <view class='item-box'>
+      <view class='item' wx:for="{{newProducts}}" wx:key="{{index}}">
+        <view class='item-img' bindtap='openProductURL' data-id="{{item.id}}">
+          <image src='{{item.img}}' mode='widthFix'></image>
+        </view>
+        <text>{{item.product_name}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+

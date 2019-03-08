@@ -1,0 +1,21 @@
+.menu{
+  box-sizing: border-box;
+  padding: 1rpx 20rpx 1rpx 0;
+  height: auto;
+  width: 100%;
+  font-family: "PingFangMedium";
+}
+.menuItem{
+  width: 100%;
+  height: 90rpx;
+  background-color: #FFF;
+  color: #333;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 24rpx;
+  margin-bottom: 4rpx;
+}
+.menu>.active{
+  background-color: #0A6EDC;
+  color: #FFF;
+}

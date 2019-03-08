@@ -1,0 +1,59 @@
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #F6F6F6;
+  padding: 200rpx 70rpx;
+  box-sizing: border-box;
+
+}
+.input-box{
+  width: 100%;
+  font-size: 30rpx;
+  color: #0a6edc;
+  margin-bottom: 40rpx;
+  display: block;
+}
+.tit{
+  margin-bottom: 30rpx;
+  display: block;
+}
+.name-input, .phone-input{
+  width: 100%;
+  height: 90rpx;
+  background-color: #FFF;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  border-radius: 10rpx;
+}
+
+input{
+  color:#333;
+  font-size: 26rpx;
+  height: 90rpx;
+}
+.submit{
+  background-color: #0A6EDC;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: fixed;
+  bottom: 80rpx;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  font-size: 26rpx;
+}
+.skip{
+  background-color: #FFF;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: fixed;
+  bottom: 180rpx;
+  left: 0;
+  right: 0;
+  border:1rpx solid #0A6EDC;
+  color: #0A6EDC;
+  font-size: 26rpx;
+}

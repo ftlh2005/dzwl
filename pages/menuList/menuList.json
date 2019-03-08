@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "item-comp": "/components/menu/menu"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

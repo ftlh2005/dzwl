@@ -1,0 +1,45 @@
+<!-- 使用wxs 手机号码中间四位显示为*号 -->
+<wxs module="phone">
+var toHide = function(array) {
+  var mphone = array.substring(0, 3) + '****' + array.substring(8);
+  return mphone;
+}
+module.exports.toHide = toHide;
+</wxs>
+
+<view class='container' wx:if="{{skip=='false'}}">
+  <text class='editPhone'> </text>
+  <image src='../../static/img/phoneImg.png' mode='widthFix' class='phoneImg'></image>
+  <text class='text'>请输入并验证新手机号:</text>
+  <!-- <text class='text' style='margin-bottom:100rpx;'><text class='text-phone'>{{user.mobile==' '||!mobile?'***********':phone.toHide(user.mobile)}}</text> 更新后可用新手机号登录</text> -->
+  <view class='phone'>
+    <text>0086</text>
+    <text class='line'>|</text>
+    <input placeholder='新手机号' value='{{newMobile}}' type='text' class='new-phone' maxlength="11" bindinput="bindMInput" type='text'></input>
+  </view>
+  <view class='phone'>
+    <input placeholder='验证码' value='{{newCode}}' type='text' class='code' bindinput="bindCInput"></input>
+    <text class='get-code' bindtap='getCodeNew'  wx:if="{{!isShow}}">获取验证码</text>
+    <text class='get-codes' wx:if="{{isShow}}">{{sec}}秒后重新发送</text>
+  </view>
+  <button bindtap='submitNew' class='submit'> 确 认 </button>
+</view>
+
+<view class='container1'  wx:if="{{skip!='false'}}">
+  <text class='editPhone title'>欢迎!\n请提交您的手机号以验证您的身份信息：</text>
+  <view class='phone'>
+    <text>0086</text>
+    <text class='line'>|</text>
+    <input placeholder='请输入您的手机号' maxlength="11" value='{{mobile}}' bindinput="bindMInput" type='text' class='new-phone'></input>
+  </view>
+  <view class='phone'>
+    <input placeholder='请输入验证码' value='{{code}}' type='text' class='code' bindinput="bindCInput"></input>
+    <text class='get-code' bindtap='getCode'  wx:if="{{!isShow}}">获取验证码</text>
+    <text class='get-codes' wx:if="{{isShow}}">{{sec}}秒后重新发送</text>
+  </view>
+  
+
+  <button class='skip' bindtap='skip' wx:if="{{skipShow==true}}">跳 过</button>
+  <button class='submit' bindtap='submit' >{{hasClerk==''?'下一步':'提 交'}}</button>
+</view>
+

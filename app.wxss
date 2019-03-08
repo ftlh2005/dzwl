@@ -1,0 +1,5 @@
+/* @import 'static/fonts/PingFangMedium.wxss' ; */
+
+view{
+  font-family: "PingFangMedium"
+}

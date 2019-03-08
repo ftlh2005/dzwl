@@ -1,0 +1,77 @@
+.menu{
+  height: 100vh;
+  width: 200rpx;
+  background-color: #F6F6F6;
+  position: absolute;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.container{
+  width: 550rpx;
+  height: 100vh;
+  background-color: #FFF;
+  position: absolute;
+  right: 0;
+  padding:15rpx 30rpx 10rpx 30rpx;
+  border-top:1rpx solid #F6F6F6;
+  box-sizing: border-box;
+}
+.item-box{
+  box-sizing: border-box;
+  padding-bottom: 40rpx;
+  width: 100%;
+  border-bottom:1rpx solid #F6F6F6;
+  margin-bottom:15rpx;
+}
+.title{
+  font-size: 30rpx;
+  color: #333333;
+}
+.clickBtn{
+  font-size: 30rpx;
+  margin-top: 35rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.clickBtn>view{
+  min-width:180rpx;
+  padding: 0 15rpx;
+  height:70rpx;
+  border:1rpx solid #0A6EDC;
+  color: #0A6EDC;
+  text-align: center;
+  line-height: 70rpx;
+  margin-bottom:20rpx;
+  margin-left: 20rpx;
+}
+.clickBtn>.un-active{
+  color: #CCC;
+  border: 1rpx solid #CCC;
+  cursor: not-allowed;
+  pointer-events:none;
+}
+.nextone{
+  z-index: 99999;
+  position: fixed;
+  bottom: 40rpx;
+  width: 400rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  right: 75rpx;
+  background-color: #0A6EDC;
+  color: #FFF;
+  font-size: 30rpx;
+}
+.showSelected{
+  position: fixed;
+  bottom: 140rpx;
+  width: 500rpx;
+  height: 70rpx;
+  right: 30rpx;
+  color: #333333;
+  font-size: 26rpx;
+}

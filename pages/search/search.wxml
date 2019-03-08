@@ -1,0 +1,121 @@
+<scroll-view class="container" scroll-y="true">
+  <view class='title' wx:if="{{hasResults != true}}">
+    <text>请输入您的配置要求：</text>
+  </view>
+  <view class='form' wx:if="{{hasResults != true}}">
+    <view class='input-box'>
+      <text>周界长度(米)：</text>
+      <input value='{{length}}' bindinput='bindlength' type="number"></input>
+    </view>
+		<text class='descs'>{{rules.length}}</text>
+    <view class='input-box'>
+      <text>防区长度(米)：</text>
+      <input value='{{long}}' bindinput='bindlong' type="number"></input>
+    </view>
+		<text class='descs'>{{rules.long}}</text>
+    <view class='input-box'>
+      <text>防区数量(个)：</text>
+      <input value='{{num}}' bindinput='bindnum' maxlength='{{rules.limit_max_num}}' type="number"></input>
+    </view>
+		<text class='descs'>{{rules.num}}</text>
+		<view class='input-box'>
+      <text>安装类型：</text>
+      <view>
+        <picker class="picker" bindchange="selectType" value="{{typeValue}}" range="{{types}}" mode ='selector'>
+          <text space='ensp'>{{!types[typeValue]?(type==1?'垂直':'倾斜'):types[typeValue]}}</text>
+        </picker>
+      </view>
+    </view>
+		<text class='descs'>{{rules.type}}</text>
+		<view class='input-box'>
+      <text>支撑杆间距(米)：</text>
+      <input value='{{interval}}' bindinput='bindinterval'></input>
+    </view>
+		<text class='descs'>{{rules.interval}}</text>
+		<view class='input-box'>
+      <text>{{twoType==2?'1类转角数量(个):':'转角数量(个)：'}}</text>
+      <input value='{{cornerNum}}' bindinput='bindCornerNum' type="number"></input>
+    </view>
+    <text class='descs'>{{rules.corner_num}}</text>
+		<view class='input-box' wx:if="{{twoType==2}}">
+      <text>{{twoType==2?'2类转角数量(个):':'转角数量二(个)：'}}</text>
+      <input value='{{cornerNum2}}' bindinput='bindCornerNum2' type="number"></input>
+    </view>
+    <text class='descs'  wx:if="{{twoType==2}}">{{rules.corner_num2}}</text>
+		<view class='input-box'  wx:if="{{twoType==2}}">
+      <text>{{twoType==2?'3类转角数量(个):':'转角数量三(个)：'}}</text>
+      <input value='{{cornerNum3}}' bindinput='bindCornerNum3' type="number"></input>
+    </view>
+		<text class='descs'  wx:if="{{twoType==2}}">{{rules.corner_num3}}</text>
+    <view class='input-box'>
+      <text>出入口数量(线)：</text>
+      <input value='{{inletNum}}' bindinput='bindInletNum' type="number"></input>
+    </view>
+		<text class='descs'>{{rules.inlet_num}}</text>
+    <view class='input-box'>
+      <text>前端金属丝线制：</text>
+      <view>
+        <picker class="picker" wx:if="{{rules.limit_wire==0}}" bindchange="selectWire" value="{{wireValue}}" range="{{wires}}" mode='selector'>
+          <text space='ensp'>{{!wires[wireValue]?wire:wires[wireValue]}}</text>
+        </picker>
+        <picker class="picker" wx:if="{{rules.limit_wire==1}}" disabled="true" bindchange="selectWire" value="{{wireValue}}" range="{{wires}}" mode='selector'>
+          <text space='ensp'>{{!wires[wireValue]?wire:wires[wireValue]}}</text>
+        </picker>
+      </view>
+    </view>
+		<text class='descs'>{{rules.wire}}</text>
+  </view>
+
+  <!-- 筛选结果 -->
+  <!-- <view class='title' wx:if="{{hasResults == true}}">
+    <text>筛选结果：</text>
+  </view>
+  <view class='results' wx:if="{{hasResults == true}}">
+    <image src='../../static/img/exm-icon.png' mode='widthFix'></image>
+    <text>{{filename}}</text> 
+    <view bindtap='resultPreview'>预览</view>
+  </view> -->
+
+  <view class='bgc' wx:if="{{hasResults == true}}">
+    <image src='../../static/img/bg.png' mode='widthFix' style='position:absolute;width:100%;'></image>
+  </view>
+  <view class='form-box'  wx:if="{{hasResults == true}}">
+    <image src='../../static/img/bg1.png' mode='widthFix' style='position:absolute;width:200rpx;height:200rpx;top:-160rpx;right:0;'></image>
+    <text style='margin-bottom:35rpx;text-align:center;font-size:35rpx;'>电子围栏智能报价</text>
+    <view class='item'>
+      <view>设备总价</view>
+      <view> 元</view>
+      <view style='font-size:40rpx;'>{{total_price}}</view>
+    </view>
+    <view class='item'>
+      <view>周界长度</view>
+            <view> 米</view>
+      <view>{{length}}</view>
+    </view>
+    <view class='item'>
+      <view>防区数量</view>
+      <view> 个</view>
+      <view>{{num}}</view>
+    </view>
+    <view class='item'>
+      <view>平均每米单价</view>
+      <view>元/米</view>
+      <view>{{price}}</view>
+    </view>
+    <view class='item'>
+      <view>配置表类别</view>
+      <view style='width:366rpx;height:80rpx;overflow:hidden;'>{{filename}}</view>
+    </view>
+    <text style='margin-bottom:35rpx;text-align:center;color:#999;'>我们承诺:您的私人信息, 不泄露给任何第三方</text>
+    <button style='border:none;background:#F6B261;color:#FFF;' bindtap='resultPreview'>在线查看报价明细</button>  
+  </view>
+</scroll-view>
+
+<view class='reset' wx:if="{{hasResults == true}}" bindtap='back'>上一步</view>
+<view class='send-email' bindtap='sendEmail' wx:if="{{hasResults == true}}">发送邮箱</view>
+<button class='submit' bindtap='submit'  wx:if="{{hasResults != true}}">下一步</button>
+
+<modal hidden="{{modalFlag}}" bindconfirm="modalOk" bindcancel="modalNo" confirmText="发送" title="请输入邮箱">
+
+  <view class="modal" ><input value="{{modalEmail}}" bindinput='bindEmail'></input></view>
+</modal>

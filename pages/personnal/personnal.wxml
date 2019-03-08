@@ -1,0 +1,27 @@
+<scroll-view class='container'>
+  <view class='funtion-box'>
+    <!-- <view class='funtion-item' bindtap='editName'>
+      <text class='item-text'>昵称</text>
+      <text class="get-info">{{userInfo.nickName}}</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view> -->
+    <view class='funtion-item' bindtap='editPhone'>
+      <text class='item-text'>修改手机号</text>
+      <text class="get-info">16602110248</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+  </view>
+
+  <!-- <view class='funtion-box'>
+    <view class='funtion-item' bindtap='clear'>
+      <text class='item-text'>清除缓存</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+    <view class='funtion-item' bindtap='updata'>
+      <text class='item-text'>检查更新</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+  </view> -->
+
+  <!-- <button class="login-out" bindtap='loginOut'>退出登录</button> -->
+</scroll-view>

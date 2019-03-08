@@ -1,0 +1,10 @@
+<!-- <swiper class='swiper'>
+  <swiper-item  wx:for="{{images}}" wx:key="{{index}}">
+    <image src="{{item.path}}"  class="banner-img" mode=''></image>
+  </swiper-item>
+</swiper>
+
+<view class='desc'>
+电子围栏是目前最先进的周界防盗报警系统，系统主要由电子围栏主机、前端配件、后端控制系统三大部分组成。通常，电子围栏主机在室外，沿着原有围墙（例如砌墙、水泥墙或铁栅栏）安装，脉冲电子围栏主机亦通常在室外，通过信号传输设备将报警信号传至后端控制中心的控制键盘上，显示防区工作状态，并远程对外部脉冲主机进行布撤防控制等操作。如今大多数电子围栏用于农业围栏和其他形式的动物管理，尽管他们经常用于加强诸如军事设施，监狱和其他安全敏感地点等敏感地区的安全，比如存在致命电压的地方。
+</view> -->
+<web-view src="{{outUrl}}?type=about" bindmessage></web-view>

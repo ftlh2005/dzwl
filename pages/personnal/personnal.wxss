@@ -1,0 +1,25 @@
+@import'../mine/mine.wxss';
+.get-info{
+  position: absolute;
+  right: 60rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.container{
+  height: 100vh;
+}
+.funtion-box:nth-child(1){
+  margin-top:0;
+}
+.login-out{
+  background-color: #0A6EDC;
+  width: 600rpx;
+  height: 90rpx;
+  color: #FFF;
+  position: fixed;
+  bottom: 80rpx;
+  left: 0;
+  right: 0;
+  font-size: 26rpx;
+  line-height: 90rpx;
+}

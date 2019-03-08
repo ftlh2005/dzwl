@@ -1,0 +1,8 @@
+<view class='menu'>
+    <block wx:for="{{menuText}}" wx:key="{{index}}">
+      <view 
+      class="menuItem {{index == catalogSelect ? 'active':''}}" 
+      data-select="{{index}}" bindtap='selectItem' 
+      >{{item}}</view>
+    </block>
+</view>

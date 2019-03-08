@@ -1,0 +1,35 @@
+<scroll-view class="container">
+  <view class='funtion'>
+    <image src='../../static/img/icon1.png' mode='widthFix' class='icon'></image>
+    <text class='tit' space="ensp">姓    名：</text>
+    <input class='content' placeholder='请输入姓名' bindinput='bindInput1' type="text" value="{{name}}"></input>
+  </view>
+
+  <!-- <view class='funtion'>
+    <image src='../../static/img/icon2.png' mode='widthFix' class='icon'></image>
+    <text class='tit' space="ensp">手 机 号：</text>
+    <input class='content' placeholder='请输入手机号码' maxlength='11' bindinput='bindInput2' type="text" value="{{mobile}}"></input>
+  </view> -->
+
+  <view class='funtion'>
+    <image src='../../static/img/icon3.png' mode='widthFix' class='icon'></image>
+    <text class='tit' space="ensp">项目信息：</text>
+    <input class='content' placeholder='请输入项目信息' bindinput='bindInput3' type="text" value="{{identity_number}}"></input>
+  </view>
+
+  <view class='funtion'>
+    <image src='../../static/img/icon4.png' mode='widthFix' class='icon'></image>
+    <text class='tit' space="ensp">公司名称：</text>
+    <input class='content' placeholder='请输入公司名称' bindinput='bindInput4' type="text" value="{{company_address}}"></input>
+  </view>
+
+  <view class='funtion'>
+    <image src='../../static/img/icon5.png' mode='widthFix' class='icon'></image>
+    <text class='tit' space="ensp">营业执照：</text>
+		<!-- <input class='content' style='width:350rpx;' placeholder='请输入组织机构代码' type="text" bindinput='bindInput5' value="{{business_licence}}"></input> -->
+    <view class='upload' bindtap='uploadImg'>点击上传</view>
+    <view class='upload' style='border-color:#0A6EDC;color:#0A6EDC;margin-left:40rpx;' bindtap='previewImage' wx:if="{{business_licence}}">预览</view>
+  </view>
+
+  <button bindtap='submit' class='submit'>提 交</button>
+</scroll-view> 

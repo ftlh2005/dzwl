@@ -1,0 +1,51 @@
+<!-- 使用wxs 手机号码中间四位显示为*号 -->
+<wxs module="phone">
+var toHide = function(array) {
+  var mphone = array.substring(0, 3) + '****' + array.substring(8);
+  return mphone;
+}
+module.exports.toHide = toHide;
+</wxs>
+
+<scroll-view class='container'>
+  <view class='personnal-info' bindtap='personnalInfo'>
+    <image src="{{userInfo.avatarUrl?userInfo.avatarUrl : user.avatar || '../../static/img/photo.png'}}" class='photo' mode='cover'></image>
+    <view class='info-text'>
+      <text class='name'>{{user.nick_name?user.nick_name:userInfo.nickName || '未知'}}</text>
+      <view class="identity" wx:if="{{user.level=='0'}}" style='background:#7C7C7C;'>游客</view>
+      <view class="identity" wx:if="{{user.level=='1'}}">注册工程商</view>
+      <view class="identity" wx:if="{{user.level=='2'}}">代理商</view>
+      <view class="identity" wx:if="{{user.level=='3'}}">业务员</view>
+      <view class="identity" wx:if="{{user.level=='4'}}">admin</view>
+			<view class='phone-num' wx:if="{{user.mobile==''||user.mobile==null}}">请点击并填写手机号码</view>
+			<view class='phone-num' wx:else>{{phone.toHide(user.mobile)}}</view>
+    </view>
+    <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+  </view>
+
+  <view class='funtion-box'>
+    <view class='funtion-item' bindtap='qualification' wx:if="{{user.level=='0'}}">
+      <text class='item-text'>资质申请</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+    <view class='funtion-item' bindtap='myClerk' wx:if="{{user.level=='0' || user.level=='1' || user.level=='2'}}">
+      <text class='item-text'>我的业务员</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+  </view>
+
+  <view class='funtion-box'>
+    <!-- <view class='funtion-item' bindtap='aboutUs'>
+      <text class='item-text'>关于我们</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view> -->
+    <view class='funtion-item' bindtap='feedback'>
+      <text class='item-text'>用户反馈</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+    <view class='funtion-item' bindtap='helps'>
+      <text class='item-text'>帮助中心</text>
+      <image src='../../static/img/icon-right.png' class='icon-right' mode='widthFix'></image>
+    </view>
+  </view>
+</scroll-view>

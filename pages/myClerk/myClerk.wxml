@@ -1,0 +1,19 @@
+<view class="container">
+  <view class='input-box'>
+    <text class='tit' wx:if="{{skip=='true'}}">请输入业务员信息,以便我们为您提供更好的服务:</text>
+    <text class='tit' wx:if="{{skip=='false'}}">请录入业务员信息:</text>
+    <view class='name-input'>
+      <input placeholder='请输入姓名' type='text' value='{{user.salesman_name}}' bindinput="bindNInput"></input>
+    </view> 
+  </view>
+
+  <view class='input-box'>
+    <text class='tit'>   </text>
+    <view class='phone-input'>
+      <input placeholder='请输入手机号' type='text' maxlength="11" value='{{user.salesman_mobile}}' bindinput="bindSInput"></input>
+    </view>
+  </view>
+
+  <button class="skip" bindtap='skip' wx:if="{{skip!='false'}}">跳 过</button>
+   <button class="submit" bindtap='submit' wx:if="{{!user.salesman_name}}">确 认</button>
+</view>

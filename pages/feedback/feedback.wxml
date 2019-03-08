@@ -1,0 +1,11 @@
+<scroll-view class="container">
+  <view class='input-box'>
+    <textarea placeholder="请输入您的评价" value="{{feedbackText}}" maxlength="400" placeholder-style="color:#9F9F9F;font-size:26rpx;" bindinput="bindInput1"></textarea>
+  </view>
+  <view class='contact'>  
+    <text>联系方式：</text>
+    <input placeholder='QQ号/手机号/邮箱' type='text' bindinput="bindInput2" value='{{feedbackContact}}'></input>
+  </view>
+
+  <button bindtap='submit' class='submit'>提交反馈</button>
+</scroll-view>

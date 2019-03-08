@@ -1,0 +1,31 @@
+.container{
+  width: 100%;
+  height: 240rpx;
+  background-color: #0A6EDC;
+  color: #FFF;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.container>text{
+  display: block;
+}
+.container>text:nth-child(1){
+  font-size: 24rpx;
+}
+.container>text:nth-child(2){
+  font-size: 50rpx;
+  margin-top: 70rpx;
+}
+
+.submit{
+  position: fixed;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  bottom: 80rpx;
+  background: #0A6EDC;
+  color: #FFF;
+  font-size: 26rpx;
+  left: 0;
+  right: 0;
+}

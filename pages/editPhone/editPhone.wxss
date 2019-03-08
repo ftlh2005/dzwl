@@ -1,0 +1,93 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+  padding: 50rpx 50rpx 250rpx 50rpx;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.container1{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+  padding: 50rpx 50rpx 600rpx 50rpx;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.container1>.phone{
+  background-color: #FFF;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  margin-top:-140rpx;
+  border-radius: 10rpx;
+}
+.title{
+  margin-bottom:100rpx;
+}
+.editPhone{
+	font-size: 36rpx;
+	color: #333333;
+}
+.phoneImg{
+  width: 280rpx;
+}
+.text{
+  font-size: 30rpx;
+  	color: #666666;
+    margin-top: -50rpx;
+}
+.text-phone{
+  color: #ff6600;
+}
+.phone{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #333;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #E5E5E5;
+  margin-top: -30rpx;
+}
+.new-phone,.code{
+  width: 70%;
+}
+.get-code{
+  color: #FE6E19;
+}
+.get-codes{
+  color: #CCC;
+  font-size: 22rpx;
+}
+.line{
+  color: #BBBBBB;
+}
+
+.submit{
+  position: fixed;
+  width: 600rpx;
+  height: 80rpx;
+  bottom: 80rpx;
+  background: #0A6EDC;
+  color: #FFF;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  z-index: 99999;
+}
+.skip{
+  position: fixed;
+  width: 600rpx;
+  height: 80rpx;
+  bottom: 180rpx;
+  background: #FFF;
+  color: #0A6EDC;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}

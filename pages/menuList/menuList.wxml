@@ -1,0 +1,68 @@
+<wxs src="../../utils/util.wxs" module="tools" />   <!-- tools可以自定义 -->
+
+<scroll-view class="menu" scroll-y="true" >
+  <item-comp 
+  bind:getId="getId"
+  menuText="{{menuText}}"
+  >
+  </item-comp>
+</scroll-view>
+
+<scroll-view class='container' wx:if="{{id==0}}" scroll-y="true">
+  <view wx:for="{{engines}}" wx:key="{{index}}" class='item-box'>
+    <text class='title' wx:if="{{item.childrens.length!=0}}">{{item.name}}</text>
+    <view class='clickBtn'>
+      <view style="position:relative;{{tools.fn(_selectedItem, itm.id).indexOf?'background:#0A6EDC;color:#FFF;':''}}"
+      wx:for="{{item.childrens}}" 
+      wx:key="{{idx}}" 
+      data-selected='{{itm.id}}' 
+      data-selected1='{{itm.name}}' 
+      wx:for-index="idx" 
+      wx:for-item="itm" 
+      bindtap='selected'>{{itm.name}}
+      <view style='position:absolute;width:50rpx;height:35rpx;color:#FFF;background:#C41D1B;border-radius:35rpx;text-align:center;line-height:35rpx;font-size:22rpx;margin:-85rpx 0 0 150rpx;' wx:if="{{itm.discount!=1}}">{{itm.discount==0.5?5:6}}折</view>
+      </view>
+    </view>
+  </view>
+  <button class='nextone' bindtap='next'>下一步</button>  
+</scroll-view>
+
+<scroll-view class='container' wx:if="{{id==1}}" scroll-y="true">
+  <view wx:for="{{parts}}" wx:key="{{index}}" class='item-box'>
+    <text class='title' wx:if="{{item.childrens.length!=0}}">{{item.name}}</text>
+    <view class='clickBtn'>
+      <view style="position:relative;{{tools.fn(_selectedItem, itm.id).indexOf?'background:#0A6EDC;color:#FFF;':''}}" class="{{tools.fn(arr, itm.id).indexOf ? '' : 'un-active'}}"
+      wx:for="{{item.childrens}}" 
+      wx:key="{{idx}}" 
+      data-selected='{{itm.id}}' 
+      data-selected1='{{itm.name}}' 
+      wx:for-index="idx" 
+      wx:for-item="itm" 
+      bindtap='selected'>{{itm.name}}
+      <view style='position:absolute;width:50rpx;height:35rpx;color:#FFF;background:#C41D1B;border-radius:35rpx;text-align:center;line-height:35rpx;font-size:22rpx;margin:-85rpx 0 0 150rpx;' wx:if="{{itm.discount!=1}}">{{itm.discount==0.5?5:6}}折</view>
+      </view>
+    </view>
+  </view>
+  <button class='nextone' bindtap='next'>下一步</button>  
+</scroll-view>
+
+<scroll-view class='container' wx:if="{{id==2}}" scroll-y="true">
+  <view wx:for="{{plantforms}}" wx:key="{{index}}" class='item-box'>
+    <text class='title' wx:if="{{item.childrens.length!=0}}">{{item.name}}</text>
+    <view class='clickBtn'>
+      <view style="position:relative;{{tools.fn(_selectedItem, itm.id).indexOf?'background:#0A6EDC;color:#FFF;':''}}" class="{{tools.fn(arr1, itm.id).indexOf ? '' : 'un-active'}}"
+      wx:for="{{item.childrens}}" 
+      wx:key="{{idx}}" 
+      data-selected='{{itm.id}}' 
+      data-selected1='{{itm.name}}' 
+      wx:for-index="idx" 
+      wx:for-item="itm" 
+      bindtap='selected'>{{itm.name}}
+        <view style='position:absolute;width:50rpx;height:35rpx;color:#FFF;background:#C41D1B;border-radius:35rpx;text-align:center;line-height:35rpx;font-size:22rpx;margin:-85rpx 0 0 150rpx;' wx:if="{{itm.discount!=1}}">{{itm.discount==0.5?5:6}}折</view>
+      </view>
+    </view>
+  </view>
+  <button class='nextone' bindtap='next'>下一步</button>  
+</scroll-view>
+
+<view class="showSelected" wx:if="{{selectedItem.length>0}}">已选({{selectedItem.length}})：{{selectedItem}}</view>

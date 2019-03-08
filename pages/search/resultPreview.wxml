@@ -1,0 +1,18 @@
+<!-- <scroll-view class="container" scroll-y="true">
+  <view class='title'>
+    <text>电子围栏探测器</text>
+  </view>
+  <view class='left-menu'>
+		
+  </view>
+  <scroll-view class='right-table' scroll-x="true">
+    <view class='table'></view>
+  </scroll-view>
+  
+  <view class='price-box'>
+    
+  </view>
+  <view class='notice'>
+
+  </view>
+</scroll-view> -->

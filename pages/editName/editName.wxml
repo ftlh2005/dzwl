@@ -1,0 +1,6 @@
+<scroll-view class='container'>
+  <view class='name-input'>
+    <input type='text' value='{{userInfo.nickName}}' placeholder='请输入新的昵称'></input>
+  </view>
+  <button class='submit' bindtap='submit'>确认修改</button>
+</scroll-view>
